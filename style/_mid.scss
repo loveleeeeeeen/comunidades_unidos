@@ -1,0 +1,306 @@
+@use 'var';
+
+.hero {
+  padding-top: 2rem;
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+    height: 80vh;
+    max-width: 100%;
+  
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        max-width: 100%;
+        
+      }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3.5rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      font-family: 'League Spartan', sans-serif;
+    }
+  }
+}
+
+.values {
+  padding-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  .value {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 2rem;
+      color: var.$kleur;
+      margin-bottom: 0.75rem;
+      font-family: 'League Spartan', sans-serif;
+    }
+
+    p, ul {
+      font-size: 1.2rem;
+      color: rgb(0, 0, 0);
+      font-family: 'League Spartan', sans-serif;
+      text-align: justify;
+      line-height: 1.4;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &::before {
+          content: "•";
+          color: var.$kleur;
+          position: absolute;
+          left: 0;
+          font-size: 1.5rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+
+.quienes-somos {
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .content-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Creates a balanced space */
+    }
+    
+
+    .image-left, .image-right {
+      flex: 1;
+      min-width: 45%;
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 500px; /* Prevents oversized images */
+      }
+    }
+
+    .text-left, .text-right {
+      flex: 1;
+      text-align: justify;
+
+      h2 {
+        color: var.$kleur;
+        font-family: 'League Spartan', sans-serif;
+        margin-bottom: 0.75rem;
+        text-align: left;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: rgb(0, 0, 0);
+        font-family: 'League Spartan', sans-serif;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        text-align: justify;
+      }
+    }
+
+    .image-left {
+      order: 1;
+    }
+
+    .text-right {
+      order: 2;
+    }
+
+    .text-left {
+      order: 1;
+    }
+
+    .image-right {
+      order: 2;
+    }
+  }
+
+.quienes-somos .content-section .image-left img,
+.quienes-somos .content-section .image-right img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Ensure the image covers the entire area */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.quienes-somos .content-section .image-left img:hover,
+.quienes-somos .content-section .image-right img:hover {
+  transform: scale(1.1); /* Zooms in the image */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+
+}
+
+.eyes img {
+  width: 100%; 
+  height: auto; 
+  margin: 0; // Remove any default margin
+  display: flex; // Ensure the image behaves as a block element
+}
+
+.proyectos {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+
+  .content-section {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin-bottom: 1.5rem;
+      margin: 0 auto;
+
+      }
+    
+      .text-left, .text-right {
+        flex: 1;
+        text-align: justify;
+    
+        h2 {
+          color: var.$kleur;
+          font-family: 'League Spartan', sans-serif;
+          margin-bottom: 0.75rem;
+          text-align: left;
+        }
+    
+        p {
+          font-size: 1.2rem;
+          color: rgb(0, 0, 0);
+          font-family: 'League Spartan', sans-serif;
+          line-height: 1.4;
+          margin-bottom: 0.5rem;
+          text-align: justify;
+
+        }
+      }
+}
+
+.contact {
+    padding-top: 10rem;
+    background-color: #f9f9f9;
+    padding-bottom: 1rem;
+  
+  .contact-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  
+    .contact-card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  
+      .icon {
+        font-size: 2.5rem;
+        color: var.$kleur;
+        margin-bottom: 0.75rem;
+      }
+  
+      h2 {
+        color: var.$kleur;
+        font-family: 'League Spartan', sans-serif;
+        margin-bottom: 0.75rem;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: rgb(0, 0, 0);
+        font-family: 'League Spartan', sans-serif;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        text-align: justify;
+  
+        strong {
+          color: var.$kleur;
+        }
+      }
+    }
+  }
+}
+
+.image-slider {
+  position: relative;
+  max-width: 800px;  /* Adjust size */
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 500px; /* Adjust height */
+  object-fit: cover; /* Ensure images fit nicely */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* BUTTON STYLING */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

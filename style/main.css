@@ -1,0 +1,424 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  line-height: 1.6;
+  background-color: #f0f7f4;
+}
+
+h1 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+  margin-top: 0.8em;
+  color: rgb(0, 91, 0);
+  text-align: center;
+}
+
+h2 {
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+  margin-top: 0.8em;
+  color: rgb(0, 91, 0);
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+  color: rgb(0, 0, 0);
+  line-height: 1.6;
+}
+
+section img {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact {
+  padding-top: 0.4em;
+  box-sizing: border-box;
+  background-color: #d9e6df;
+}
+
+h1, h2, h3, p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85%;
+}
+
+header {
+  background-color: #d9e6df;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+header .header-left {
+  flex: 1;
+}
+header .header-left h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #0b3d02;
+  font-family: "League Spartan", sans-serif;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+header .logo-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+header .logo-center img {
+  height: 80px;
+  width: auto;
+}
+header .logo-center img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for both zoom and shadow */
+}
+header .header-right {
+  flex: 1;
+}
+
+.hero {
+  padding-top: 2rem;
+  position: relative;
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+  height: 80vh;
+  max-width: 100%;
+}
+.hero .hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+.hero .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+}
+.hero .hero-image h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: "League Spartan", sans-serif;
+}
+
+.values {
+  padding-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.values .value {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.values .value h2 {
+  font-size: 2rem;
+  color: rgb(0, 91, 0);
+  margin-bottom: 0.75rem;
+  font-family: "League Spartan", sans-serif;
+}
+.values .value p, .values .value ul {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-family: "League Spartan", sans-serif;
+  text-align: justify;
+  line-height: 1.4;
+}
+.values .value ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.values .value ul li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.values .value ul li::before {
+  content: "•";
+  color: rgb(0, 91, 0);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.quienes-somos {
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.quienes-somos .content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* Creates a balanced space */
+}
+.quienes-somos .image-left, .quienes-somos .image-right {
+  flex: 1;
+  min-width: 45%;
+}
+.quienes-somos .image-left img, .quienes-somos .image-right img {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Prevents oversized images */
+}
+.quienes-somos .text-left, .quienes-somos .text-right {
+  flex: 1;
+  text-align: justify;
+}
+.quienes-somos .text-left h2, .quienes-somos .text-right h2 {
+  color: rgb(0, 91, 0);
+  font-family: "League Spartan", sans-serif;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+.quienes-somos .text-left p, .quienes-somos .text-right p {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-family: "League Spartan", sans-serif;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+.quienes-somos .image-left {
+  order: 1;
+}
+.quienes-somos .text-right {
+  order: 2;
+}
+.quienes-somos .text-left {
+  order: 1;
+}
+.quienes-somos .image-right {
+  order: 2;
+}
+
+.quienes-somos .content-section .image-left img,
+.quienes-somos .content-section .image-right img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Ensure the image covers the entire area */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.quienes-somos .content-section .image-left img:hover,
+.quienes-somos .content-section .image-right img:hover {
+  transform: scale(1.1); /* Zooms in the image */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+}
+
+.eyes img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: flex;
+}
+
+.proyectos {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.proyectos .content-section {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin-bottom: 1.5rem;
+  margin: 0 auto;
+}
+.proyectos .text-left, .proyectos .text-right {
+  flex: 1;
+  text-align: justify;
+}
+.proyectos .text-left h2, .proyectos .text-right h2 {
+  color: rgb(0, 91, 0);
+  font-family: "League Spartan", sans-serif;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+.proyectos .text-left p, .proyectos .text-right p {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-family: "League Spartan", sans-serif;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.contact {
+  padding-top: 10rem;
+  background-color: #f9f9f9;
+  padding-bottom: 1rem;
+}
+.contact .contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.contact .contact-grid .contact-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.contact .contact-grid .contact-card .icon {
+  font-size: 2.5rem;
+  color: rgb(0, 91, 0);
+  margin-bottom: 0.75rem;
+}
+.contact .contact-grid .contact-card h2 {
+  color: rgb(0, 91, 0);
+  font-family: "League Spartan", sans-serif;
+  margin-bottom: 0.75rem;
+}
+.contact .contact-grid .contact-card p {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-family: "League Spartan", sans-serif;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.contact .contact-grid .contact-card p strong {
+  color: rgb(0, 91, 0);
+}
+
+.image-slider {
+  position: relative;
+  max-width: 800px; /* Adjust size */
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 500px; /* Adjust height */
+  object-fit: cover; /* Ensure images fit nicely */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* BUTTON STYLING */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Reset underline for the logo/title */
+header a {
+  text-decoration: none; /* This removes any underline on the title or logo */
+}
+
+/* Navbar styles */
+nav ul {
+  font-size: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+header nav a {
+  padding: 3px 0.7em;
+  color: #0b3d02;
+  font-family: "League Spartan", sans-serif;
+}
+
+nav ul a {
+  color: #0b3d02;
+  font-size: 1.3rem;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Hover effect */
+nav ul a:hover {
+  color: rgb(0, 91, 0);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Active page underline */
+nav ul a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+footer {
+  background-color: #d9e6df;
+  font-size: 1rem;
+  font-family: "League Spartan", sans-serif;
+  text-align: center;
+  padding: 1rem;
+  color: black;
+  border-top: 1px solid black;
+}
+
+/*# sourceMappingURL=main.css.map */
