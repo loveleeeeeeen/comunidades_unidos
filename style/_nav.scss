@@ -1,42 +1,104 @@
 @use 'var';
 
-
 /* Reset underline for the logo/title */
 header a {
-    text-decoration: none; /* This removes any underline on the title or logo */
+  text-decoration: none; /* This removes any underline on the title or logo */
 }
 
 /* Navbar styles */
 nav ul {
-    font-size: 1.5rem;
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
+  font-size: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
 }
 
 header nav a {
-    padding: 3px 0.7em;
-    color: #0b3d02;
-    font-family: 'League Spartan', sans-serif;
+  padding: 3px 0.7em;
+  color: #0b3d02;
+  font-family: 'League Spartan', sans-serif;
 }
 
 nav ul a {
-    color: #0b3d02;
-    font-size: 1.3rem;
-    font-family: 'League Spartan', sans-serif;
+  color: #0b3d02;
+  font-size: 1.3rem;
+  font-family: 'League Spartan', sans-serif;
 }
 
 /* Hover effect */
 nav ul a:hover {
-    color: var.$kleur;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-
+  color: var.$kleur;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
 }
 
 /* Active page underline */
 nav ul a.active {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* === RESPONSIVE NAV === */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #0b3d02;
+    background: none;
+    border: none;
+    margin-left: auto;
+  }
+
+  /* Hide nav by default */
+  nav.header-right {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f0f7f4;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &.open {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  /* Adjusting the mobile logo + title */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .logo-mobile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      height: 30px; /* Adjust size to make the logo smaller */
+      margin-right: 0.5rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      color: var.$kleur;
+      font-family: 'League Spartan', sans-serif;
+      white-space: nowrap;
+    }
+  }
 }

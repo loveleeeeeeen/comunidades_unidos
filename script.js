@@ -23,3 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Show first image on load
   showSlide(index);
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.mobile-nav');
+
+  toggleButton.addEventListener('click', () => {
+    nav.classList.toggle('open'); // Toggle the 'open' class to show/hide the menu
+  });
+});

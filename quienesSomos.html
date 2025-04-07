@@ -7,9 +7,27 @@
   <link rel="stylesheet" href="style/main.css">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <script src="script.js"></script>
+
 </head>
 <body>
   <header>
+    <div class="mobile-header">
+      <a href="index.html" class="logo-mobile">
+        <img src="images/logo.png" alt="Logo">
+        <span>COMUNIDADES UNIDOS</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="quienesSomos.html">Quiénes Somos</a></li>
+          <li><a href="proyectos.html" >Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+ <div class="desktop-header">
     <div class="header-left">
       <a href="index.html">
         <h1>COMUNIDADES UNIDOS</h1>
@@ -20,15 +38,16 @@
         <img src="images/logo.png" alt="Comunidades Unidos Logo"> 
       </a>
     </div>
-    <nav class="header-right">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="quienesSomos.html" class="active">Quiénes Somos</a></li>
-        <li><a href="proyectos.html" >Proyectos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    
+      <nav class="header-right">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienesSomos.html"class="active">Quiénes Somos</a></li>
+          <li><a href="proyectos.html" >Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
   <!-- Main content -->
   <main class="quienes-somos">
@@ -105,7 +124,7 @@
         </p>
       </div>
       <div class="image-right">
-        <img src="images/culture.jpg" alt="Cultura y Tradiciones">
+        <img src="images/food.jpg" alt="Cultura y Tradiciones">
       </div>
     </section>
 
@@ -132,7 +151,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Comunidades Unidos. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Comunidades Unidos. Todos los derechos reservados. Creado por Loveleen Sidhu.</p>
   </footer>
 </body>
 </html>

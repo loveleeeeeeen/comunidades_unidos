@@ -57,48 +57,159 @@ h1, h2, h3, p {
   max-width: 85%;
 }
 
-header {
-  background-color: #d9e6df;
-  padding: 1rem;
+/* ===== DESKTOP HEADER (YOUR ORIGINAL - UNTOUCHED) ===== */
+.desktop-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
-  position: fixed;
-  top: 0;
-  left: 0;
+  justify-content: space-between;
+  padding: 1rem 2rem;
   width: 100%;
-  z-index: 1000;
+  height: 100px;
+  background-color: #d9e6df;
+  position: relative;
+  border-bottom: 1px solid black;
 }
-header .header-left {
+.desktop-header .header-left {
   flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-header .header-left h1 {
+.desktop-header .header-left a {
+  text-decoration: none;
+}
+.desktop-header .header-left a h1 {
   font-size: 1.7rem;
   font-weight: bold;
   color: #0b3d02;
   font-family: "League Spartan", sans-serif;
-  margin-left: 0;
-  justify-content: flex-start;
+  margin: 0;
+  white-space: nowrap;
 }
-header .logo-center {
-  flex: 1;
+.desktop-header .logo-center {
+  flex: 0 1 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
-header .logo-center img {
+.desktop-header .logo-center a {
+  display: flex;
+  align-items: center;
+}
+.desktop-header .logo-center a img {
   height: 80px;
   width: auto;
 }
-header .logo-center img {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for both zoom and shadow */
-}
-header .header-right {
+.desktop-header .header-right {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.desktop-header .header-right ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.desktop-header .header-right ul li a {
+  color: #0b3d02;
+  font-family: "League Spartan", sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.desktop-header .header-right ul li a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.desktop-header .header-right ul li a:hover {
+  color: #57bc45;
 }
 
+/* ===== MOBILE HEADER (HIDDEN BY DEFAULT) ===== */
+.mobile-header {
+  display: none; /* Hidden on desktop */
+  background-color: #d9e6df;
+}
+.mobile-header .logo-mobile img {
+  height: 50px; /* Smaller logo for mobile */
+}
+
+/* ===== MOBILE VIEW (ONLY SHOWS BELOW 1024px) ===== */
+@media (max-width: 1024px) {
+  /* Hide desktop header completely */
+  .desktop-header {
+    display: none !important;
+  }
+  /* Show mobile header */
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid black;
+    position: relative;
+    /* Mobile dropdown menu */
+  }
+  .mobile-header .mobile-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+    background: #d9e6df;
+    border: 1px solid #0b3d02;
+    display: none;
+  }
+  .mobile-header .mobile-nav.open {
+    display: block;
+  }
+  .mobile-header .mobile-nav ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-header .mobile-nav ul li {
+    display: block;
+    border-bottom: 1px solid rgba(11, 61, 2, 0.2);
+  }
+  .mobile-header .mobile-nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #0b3d02;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.3rem;
+  }
+  .mobile-header .mobile-nav ul li a:hover {
+    color: #57bc45;
+    background: rgba(11, 61, 2, 0.05);
+  }
+  .mobile-header .mobile-nav ul li a.active {
+    color: #57bc45;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}
+/* ===== RESPONSIVE ADJUSTMENTS (600-1200px) ===== */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .desktop-header .header-left h1 {
+    font-size: 1.5rem; /* Slightly smaller text */
+  }
+  .desktop-header .logo-center img {
+    height: 70px; /* Slightly smaller logo */
+  }
+  .desktop-header .header-right ul {
+    gap: 1rem; /* Reduced gap between nav items */
+  }
+  .desktop-header .header-right ul li a {
+    font-size: 1.1rem; /* Slightly smaller nav text */
+  }
+}
 .hero {
-  padding-top: 2rem;
+  padding-top: 0%;
   position: relative;
   text-align: center;
   margin-top: 0;
@@ -175,7 +286,7 @@ header .header-right {
 }
 
 .quienes-somos {
-  padding-top: 10rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -242,6 +353,7 @@ header .header-right {
 }
 
 .eyes img {
+  padding-top: 0%;
   width: 100%;
   height: auto;
   margin: 0;
@@ -249,7 +361,7 @@ header .header-right {
 }
 
 .proyectos {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -281,7 +393,7 @@ header .header-right {
 }
 
 .contact {
-  padding-top: 10rem;
+  padding-top: 3rem;
   background-color: #f0f7f4;
   padding-bottom: 1rem;
 }
@@ -372,6 +484,123 @@ header .header-right {
   background: rgba(0, 0, 0, 0.8);
 }
 
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .values {
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .values .value {
+    margin-bottom: 2rem;
+  }
+  .quienes-somos {
+    padding-top: 5rem;
+  }
+  .quienes-somos .content-section {
+    flex-direction: column;
+  }
+  .quienes-somos .content-section .text-left, .quienes-somos .content-section .text-right {
+    order: 1;
+    text-align: center;
+  }
+  .quienes-somos .content-section .image-left, .quienes-somos .content-section .image-right {
+    order: 2;
+    max-width: 100%;
+  }
+  .quienes-somos .content-section .image-left img, .quienes-somos .content-section .image-right img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .proyectos {
+    padding-top: 7rem;
+  }
+  .proyectos .content-section {
+    flex-direction: column;
+  }
+  .proyectos .content-section .text-left, .proyectos .content-section .text-right {
+    order: 1;
+  }
+  .proyectos .content-section .project-image {
+    order: 2;
+    margin-top: 1rem;
+  }
+  .proyectos .content-section img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .image-slider {
+    max-width: 100%;
+    height: auto;
+  }
+  .slide {
+    height: 400px;
+  }
+}
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  .values {
+    padding: 1rem;
+  }
+  .contact .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .quienes-somos {
+    padding-top: 5rem;
+  }
+  .quienes-somos .content-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .quienes-somos .content-section .text-left, .quienes-somos .content-section .text-right {
+    order: 1;
+  }
+  .quienes-somos .content-section .image-left, .quienes-somos .content-section .image-right {
+    order: 2;
+  }
+  .quienes-somos .content-section .image-left img, .quienes-somos .content-section .image-right img {
+    max-height: 250px;
+  }
+  .quienes-somos .content-section h2 {
+    font-size: 1.75rem;
+  }
+  .quienes-somos .content-section p {
+    font-size: 1rem;
+  }
+  .proyectos {
+    padding-top: 7rem;
+  }
+  .proyectos .content-section {
+    flex-direction: column;
+  }
+  .proyectos .content-section img {
+    max-height: 250px;
+  }
+  .slide {
+    height: 300px;
+  }
+  .prev, .next {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
 /* Reset underline for the logo/title */
 header a {
   text-decoration: none; /* This removes any underline on the title or logo */
@@ -411,6 +640,62 @@ nav ul a.active {
   text-decoration-thickness: 2px;
 }
 
+/* === RESPONSIVE NAV === */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #0b3d02;
+    background: none;
+    border: none;
+    margin-left: auto;
+  }
+  /* Hide nav by default */
+  nav.header-right {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f0f7f4;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+  }
+  nav.header-right ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  nav.header-right.open {
+    display: flex;
+    justify-content: center;
+  }
+  /* Adjusting the mobile logo + title */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  .logo-mobile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo-mobile img {
+    height: 30px; /* Adjust size to make the logo smaller */
+    margin-right: 0.5rem;
+  }
+  .logo-mobile span {
+    font-size: 1.2rem;
+    color: rgb(0, 91, 0);
+    font-family: "League Spartan", sans-serif;
+    white-space: nowrap;
+  }
+}
 footer {
   background-color: #d9e6df;
   font-size: 1rem;

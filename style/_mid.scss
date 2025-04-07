@@ -1,7 +1,7 @@
 @use 'var';
 
 .hero {
-  padding-top: 2rem;
+    padding-top: 0%;
     position: relative;
     text-align: center;
     margin-top: 0;
@@ -88,7 +88,7 @@
 }
 
 .quienes-somos {
-  padding-top: 10rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -166,19 +166,18 @@
 }
 
 .eyes img {
+  padding-top: 0%;
   width: 100%; 
   height: auto; 
-  margin: 0; // Remove any default margin
-  display: flex; // Ensure the image behaves as a block element
+  margin: 0; 
+  display: flex; 
 }
 
 .proyectos {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-
-
 
   .content-section {
       display: flex;
@@ -213,7 +212,7 @@
 }
 
 .contact {
-    padding-top: 10rem;
+    padding-top: 3rem;
     background-color: #f0f7f4;
     padding-bottom: 1rem;
   
@@ -303,4 +302,151 @@
 
 .prev:hover, .next:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .values {
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .value {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .quienes-somos {
+    padding-top: 5rem;
+    
+    .content-section {
+      flex-direction: column;
+
+      .text-left, .text-right {
+        order: 1;
+        text-align: center;
+      }
+
+      .image-left, .image-right {
+        order: 2;
+        max-width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+          max-height: 300px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .proyectos {
+    padding-top: 7rem; // bump this up to avoid header overlap
+
+    .content-section {
+      flex-direction: column;
+
+      .text-left, .text-right {
+        order: 1;
+      }
+
+      .project-image {
+        order: 2;
+        margin-top: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .image-slider {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .slide {
+    height: 400px;
+  }
+}
+
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+
+    h1 {
+      font-size: 2rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .values {
+    padding: 1rem;
+  }
+
+  .contact .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .quienes-somos {
+    padding-top: 5rem;
+
+    .content-section {
+      flex-direction: column;
+      text-align: center;
+
+      .text-left, .text-right {
+        order: 1;
+      }
+
+      .image-left, .image-right {
+        order: 2;
+
+        img {
+          max-height: 250px;
+        }
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .proyectos {
+    padding-top: 7rem;
+
+    .content-section {
+      flex-direction: column;
+
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+
+  .slide {
+    height: 300px;
+  }
+
+  .prev, .next {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
 }

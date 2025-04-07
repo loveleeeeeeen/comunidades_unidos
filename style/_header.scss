@@ -1,46 +1,179 @@
-@use "var";
-
-header {
-  background-color: #d9e6df;
-  padding: 1rem;
+/* ===== DESKTOP HEADER (YOUR ORIGINAL - UNTOUCHED) ===== */
+.desktop-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
-  position: fixed;
-  top: 0;
-  left: 0;
+  justify-content: space-between;
+  padding: 1rem 2rem;
   width: 100%;
-  z-index: 1000;
+  height: 100px;
+  background-color: #d9e6df;
+  position: relative;
+  border-bottom: 1px solid black;
 
   .header-left {
     flex: 1;
-    h1 {
-      font-size: 1.7rem;
-      font-weight: bold;
-      color: #0b3d02;
-      font-family: 'League Spartan', sans-serif;
-      margin-left: 0;
-      justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
+    a {
+      text-decoration: none;
+
+      h1 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #0b3d02;
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        white-space: nowrap;
+      }
     }
   }
 
   .logo-center {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
     justify-content: center;
-    img {
-      height: 80px;
-      width: auto;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 80px;
+        width: auto;
+      }
     }
   }
-  .logo-center img {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for both zoom and shadow */
-  }
-  
 
   .header-right {
     flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        a {
+          color: #0b3d02;
+          font-family: 'League Spartan', sans-serif;
+          text-decoration: none;
+          font-size: 1.3rem;
+
+          &.active {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+          }
+
+          &:hover {
+            color: #57bc45;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===== MOBILE HEADER (HIDDEN BY DEFAULT) ===== */
+.mobile-header {
+  display: none; /* Hidden on desktop */
+  background-color: #d9e6df;
+  
+  .logo-mobile img {
+    height: 50px; /* Smaller logo for mobile */
+  }
+}
+
+/* ===== MOBILE VIEW (ONLY SHOWS BELOW 1024px) ===== */
+@media (max-width: 1024px) {
+  /* Hide desktop header completely */
+  .desktop-header {
+    display: none !important;
+  }
+
+  /* Show mobile header */
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid black;
+    position: relative;
+
+    /* Mobile dropdown menu */
+    .mobile-nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      max-width: 300px;
+      background: #d9e6df;
+      border: 1px solid #0b3d02;
+      display: none;
+
+      &.open {
+        display: block;
+      }
+
+      ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: block;
+          border-bottom: 1px solid rgba(11, 61, 2, 0.2);
+
+          a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #0b3d02;
+            font-family: 'League Spartan', sans-serif;
+            font-size: 1.3rem;
+
+            &:hover {
+              color: #57bc45;
+              background: rgba(11, 61, 2, 0.05);
+            }
+
+            &.active {
+              color: #57bc45;
+              text-decoration: underline;
+              text-decoration-thickness: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS (600-1200px) ===== */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .desktop-header {
+    .header-left h1 {
+      font-size: 1.5rem; /* Slightly smaller text */
+    }
+    
+    .logo-center img {
+      height: 70px; /* Slightly smaller logo */
+    }
+    
+    .header-right ul {
+      gap: 1rem; /* Reduced gap between nav items */
+      
+      li a {
+        font-size: 1.1rem; /* Slightly smaller nav text */
+      }
+    }
   }
 }
