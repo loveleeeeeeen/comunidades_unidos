@@ -24,12 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
   showSlide(index);
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('menu-toggle');
   const nav = document.querySelector('.mobile-nav');
 
   if (toggleButton && nav) {
     toggleButton.addEventListener('click', () => {
+      console.log('Hamburger menu clicked');  // Check if the event is firing
       nav.classList.toggle('open');
     });
   } else {

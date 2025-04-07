@@ -152,6 +152,7 @@ h1, h2, h3, p {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid black;
     position: relative;
+    z-index: 1000;
     /* Mobile dropdown menu */
   }
   .mobile-header .mobile-nav {
@@ -163,6 +164,7 @@ h1, h2, h3, p {
     background: #d9e6df;
     border: 1px solid #0b3d02;
     display: none;
+    z-index: 999;
   }
   .mobile-header .mobile-nav.open {
     display: block;
