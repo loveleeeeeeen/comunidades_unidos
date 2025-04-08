@@ -151,7 +151,8 @@ h1, h2, h3, p {
     align-items: center;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid black;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 1000;
     /* Mobile dropdown menu */
   }
@@ -586,8 +587,11 @@ h1, h2, h3, p {
   .quienes-somos .content-section p {
     font-size: 1rem;
   }
+  .eyes img {
+    padding-top: 5rem;
+  }
   .proyectos {
-    padding-top: 7rem;
+    padding-top: 1rem;
   }
   .proyectos .content-section {
     flex-direction: column;
